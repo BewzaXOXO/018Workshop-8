@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NPRU Cafe</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <h1>NPRU Cafe</h1>
+        <div>
+            <button class="filterbtn" id="all">All</button>
+            <button class="filterbtn" id="drink">Drink</button>
+            <button class="filterbtn" id="bakery">Bakery</button>
+        </div>
+        <script>
+            const filterbtn = document.querySelectorAll(".filterbtn");
+            filterbtn.forEach(button=>{
+                button.addEventListener('click',()=>{
+                    const filter = button.id;
+                    const menuItems = document.querySelectorAll('.menu-item');
+                    menuItems.forEach(item =>{
+                        loadMenu(filter);
+                    })
+                })
+            })
+
+        </script>
+        <div id="menu-container">กำลังโหลดเมนู</div>
+        <script src="js/script.js"></script>
+    </body>
+</html>
